@@ -1,0 +1,41 @@
+
+            <section class="conteiner">
+    
+                        <h2 class="fw-bold my-5 text-center">Crear Usuario</h2>
+                <form class="row g-3 formulario" [formGroup]="usuarioForm" (ngSubmit)="usuarioNuevo()">
+                    <div>
+                            <div class="col-md-12">
+                                <input type="text" placeholder="nombre"  class="form-control" formControlName="nombre" required>
+                                <span class="text-danger fw-bold" *ngIf="usuarioForm.get('nombre')?.hasError('required') && usuarioForm.get('nombre')?.touched">nombre obligatorio</span>
+                            </div>
+                            <div class="col-md-12">
+                            <input type="text" placeholder="apellido" class="form-control"formControlName="apellido" required>
+                            <span class="text-danger fw-bold" *ngIf="usuarioForm.get('apellido')?.hasError('required') && usuarioForm.get('apellido')?.touched">apellido obligatorio</span>
+                            </div>
+                            <div class="col-6">
+                            <input type="email" placeholder="correo" class="form-control" formControlName="correo" required>
+                            <span class="text-danger fw-bold" *ngIf="usuarioForm.get('correo')?.hasError('required') && usuarioForm.get('correo')?.touched">correo obligatorio</span>
+                            </div>
+                            <div class="col-6">
+                            <input type="text" placeholder="telefono"  class="form-control" formControlName="telefono"required>
+                            <span class="text-danger fw-bold" *ngIf="usuarioForm.get('telefono')?.hasError('required') && usuarioForm.get('telefono')?.touched">telefono obligatorio</span>
+                            </div>
+                            
+                            <div class="col-6">
+                            <select class="form-select" size="4" aria-label="size 3 select example" formControlName="Rol">
+                                <option selected>Seleccione un Rol....</option>
+                                <option value="Administrativo">Administrativo</option>
+                                <option value="Docente">Docente</option>
+                                <option value="Padre">Padre</option>
+                                <option value="Estudiante">Estudiante</option>
+                            </select>
+                            <span class="text-danger fw-bold" *ngIf="usuarioForm.get('Rol')?.hasError('required') && usuarioForm.get('Rol')?.touched">es obligatorio seleccionar un rol</span>
+                            </div>
+                        
+                            
+                        <button type="submit" class="btn btn-primary row-md-2" [disabled]="usuarioForm.invalid">Crear Usuario</button>
+                
+                    </div>
+                    
+                </form>
+            </section>

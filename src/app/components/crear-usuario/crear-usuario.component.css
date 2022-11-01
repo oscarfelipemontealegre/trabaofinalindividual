@@ -1,0 +1,19 @@
+.conteiner{
+    background: darkblue;
+    max-width: 700px;
+    margin: 40px auto;
+    border-radius: 29px;
+    height: auto;
+    width: auto;
+    border: 12px;
+    position: relative;
+}
+
+.conteiner.formulario{
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 10px 20px 10px;
+    border-radius: 10px;
+    outline: none;
+
+}
